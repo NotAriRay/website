@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;1,400&display=swap");
+
+:root {
+  --bg: #141415;
+  --black0: #131314;
+  --black1: #1b1b1d;
+  --black2: #2a2a2d;
+  --cyan: #84ecf7;
+  --blue: #90cce0;
+  --yellow: #e6b99d;
+  --fg: #c9c7cd;
+  --transparent-blue: #90cce05b;
+}
+
+/* General Page Styles */
+body {
+  background-color: var(--bg);
+  font-family: "Space Mono", monospace;
+  color: var(--fg);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Experience Section */
+.experience-section {
+  text-align: center;
+  padding: 2rem;
+  max-width: 800px;
+  color: var(--fg);
+}
+
+.experience-section h1 {
+  font-size: 2.5rem;
+  color: var(--fg);
+  margin-bottom: 2rem;
+}
+
+/* Timeline container */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+/* Vertical line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: var(--transparent-blue);
+}
+
+/* Timeline item */
+.timeline-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.timeline-item:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.timeline-item:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.timeline-item:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.timeline-item:nth-child(4) {
+  animation-delay: 0.8s;
+}
+.timeline-item:nth-child(5) {
+  animation-delay: 1s;
+}
+
+/* Timeline point */
+.timeline-point {
+  position: absolute;
+  left: 10px;
+  width: 15px;
+  height: 15px;
+  background-color: var(--blue);
+  border-radius: 50%;
+  z-index: 1;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Timeline content */
+.timeline-content {
+  background-color: var(--black1);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin-left: 40px;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.timeline-content h3 {
+  margin: 0;
+  color: var(--yellow);
+}
+
+.timeline-content p {
+  margin: 0.5rem 0 0;
+  color: var(--fg);
+}
+
+/* Hover effects */
+.timeline-content:hover {
+  background-color: var(--black2);
+}
+
+.timeline-item:hover .timeline-point {
+  transform: scale(1.3);
+  background-color: var(--cyan);
+}
+
+/* Slide-in animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

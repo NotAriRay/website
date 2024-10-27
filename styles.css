@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+:rot {
+  --black0: #131314;
+  --black1: #1b1b1d;
+  --black2: #2a2a2d;
+  --black3: #3e3e43;
+  --black4: #57575f;
+  --black5: #757581;
+  --black6: #9998a8;
+  --black7: #c1c0d4;
+  --orange: #f5a191;
+  --green: #90b99f;
+  --yellow: #e6b99d;
+  --purple: #e29eca;
+  --blue: #90cce0;
+  --cyan: #84ecf7;
+  --pink: #e29eca;
+  --red: #ea83a5;
+  --transparent-orange: #f5a29174;
+  --transparent-green: #90b99f62;
+  --transparent-yellow: #e6b99d4d;
+  --transparent-purple: #aca1cf58;
+  --transparent-blue: #90cce05b;
+  --transparent-cyan: #84ecf757;
+  --transparent-pink: #e29eca4e;
+  --transparent-red: #ea83a554;
+  --bg: #141415;
+  --fg: #c9c7cd;
+}
+
+body {
+  background-color: #141415 !important;
+  font-family: "Space Mono", monospace;
+  color: #c9c7cd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.main {
+  text-align: left;
+}
+
+.bigtext {
+  font-size: 3.2rem;
+}
+
+.smoltext {
+  font-size: 1.25rem;
+}
+
+a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #c9c7cd;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+a .arrow,
+a .slash {
+  display: inline-block;
+  transition: transform 0.3s;
+  transform-origin: 50% 53%;
+}
+
+a .a1,
+a .s1 {
+  color: #84ecf7;
+}
+
+a .a2,
+a .s2 {
+  color: #f5a191;
+}
+
+a .a3,
+a .s3 {
+  color: #90b99f;
+}
+
+a .a4,
+a .s4 {
+  color: #e6b99d;
+}
+
+a .a5,
+a .s5 {
+  color: #ea83a5;
+}
+
+a .arrow {
+  position: absolute;
+  top: -0.02em;
+  transform: rotate(-72deg) scaleY(0);
+}
+
+a:hover .arrow {
+  transform: rotate(0) scaleY(1);
+}
+
+a:hover .slash {
+  transform: rotate(72deg) scaleY(0);
+}
+
+a .link-text {
+  display: inline-block;
+  transition: transform 0.3s;
+  margin-left: -2px; /* Adjust margin to remove space */
+}
+
+a:hover .link-text {
+  transform: translateX(5px); /* Move text to the right on hover */
+}
+
+/* Animation for transforming characters in the title */
+.bigtext span {
+  display: inline-block;
+  font-size: 3.2rem;
+  animation: transformArrow 1.5s ease-in-out forwards;
+}
+
+.push {
+  margin-left: 20px;
+}
+
+/* Home Screen Opening Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Apply fade-in animation with specific delays */
+.name {
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.2s;
+  animation-fill-mode: both;
+}
+
+.description {
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.4s;
+  animation-fill-mode: both;
+}
+
+.nav-links .about-link {
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.6s;
+  animation-fill-mode: both;
+}
+
+.nav-links .projects-link {
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.7s;
+  animation-fill-mode: both;
+}
+
+.nav-links .blog-link {
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.8s;
+  animation-fill-mode: both;
+}
+
+.nav-links .contact-link {
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.9s;
+  animation-fill-mode: both;
+}
