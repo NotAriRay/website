@@ -1,0 +1,164 @@
+:root {
+  --black0: #131314;
+  --black1: #1b1b1d;
+  --black2: #2a2a2d;
+  --black3: #3e3e43;
+  --black4: #57575f;
+  --black5: #757581;
+  --black6: #9998a8;
+  --black7: #c1c0d4;
+  --orange: #f5a191;
+  --green: #90b99f;
+  --yellow: #e6b99d;
+  --purple: #e29eca;
+  --blue: #90cce0;
+  --cyan: #84ecf7;
+  --pink: #e29eca;
+  --red: #ea83a5;
+  --transparent-orange: #f5a29174;
+  --transparent-green: #90b99f62;
+  --transparent-yellow: #e6b99d4d;
+  --transparent-purple: #aca1cf58;
+  --transparent-blue: #90cce05b;
+  --transparent-cyan: #84ecf757;
+  --transparent-pink: #e29eca4e;
+  --transparent-red: #ea83a554;
+  --bg: #141415;
+  --fg: #c9c7cd;
+}
+
+/* General Page Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.projects-section {
+  text-align: center;
+  max-width: 1200px;
+  padding: 2rem;
+}
+
+.projects-section h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+/* Projects Container */
+.projects-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.project-item {
+  background-color: var(--black1);
+  border-radius: 10px;
+  border: 2px solid var(--black2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  background-color: var(--black2);
+}
+
+#phoenix-image {
+  background-image: url(https://www.phoenixlauncher.app/images/phoenix-dark-triple.webp);
+  background-size: cover;
+  background-position: center;
+}
+
+#dotfiles-image {
+  background-image: url(https://github.com/NotAriRay/dotfiles/raw/main/Screenshots/SS1.png);
+  background-size: cover;
+  background-position: center;
+}
+
+#website-image {
+  background-image: url("/images/site.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.project-info {
+  padding: 1.5rem;
+}
+
+.project-info h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-info p {
+  color: #c9c7cd;
+  font-size: 1rem;
+}
+
+.pj1 {
+  border: var(--orange) solid 1px;
+  border-radius: 5px;
+  padding-left: 2px;
+  padding-right: 2px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  background-color: var(--transparent-orange);
+  color: var(--orange);
+}
+
+.pj2 {
+  border: var(--purple) solid 1px;
+  border-radius: 5px;
+  padding-left: 2px;
+  padding-right: 2px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  background-color: var(--transparent-purple);
+  color: var(--purple);
+}
+
+.pj3 {
+  border: var(--cyan) solid 1px;
+  border-radius: 5px;
+  padding-left: 2px;
+  padding-right: 2px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  background-color: var(--transparent-cyan);
+  color: var(--cyan);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .projects-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .projects-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.arrow {
+  margin-right: 2px;
+}
+
+.slash {
+  margin-right: 2px;
+}

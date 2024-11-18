@@ -288,3 +288,30 @@ header {
   background-color: var(--transparent-blue);
   color: var(--blue);
 }
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  border: 3px solid var(--fg); /* Adjust border color */
+  transition: transform 0.5s ease-in-out, opacity 1s ease-in-out;
+  opacity: 0; /* Start hidden */
+}
+
+/* Fade-in effect */
+.fade-in .profile-image {
+  opacity: 1;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.profile-image:hover {
+  transform: scale(1) rotate(-5deg); /* Add zoom and rotate effect on hover */
+  transition: transform 0.3s ease-in-out; /* Make hover effect faster */
+}
