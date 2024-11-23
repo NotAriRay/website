@@ -174,3 +174,90 @@ a:hover .link-text {
   animation-delay: 0.9s;
   animation-fill-mode: both;
 }
+
+/* General Styles */
+body {
+  background-color: #141415 !important;
+  font-family: "Space Mono", monospace;
+  color: #c9c7cd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 20px; /* Add padding to prevent content from touching edges on small screens */
+  box-sizing: border-box;
+}
+
+.main {
+  text-align: center; /* Center align text on smaller screens */
+  max-width: 90%; /* Constrain content width */
+}
+
+/* Typography Adjustments */
+.bigtext {
+  font-size: 3.2rem;
+}
+
+.smoltext {
+  font-size: 1.25rem;
+}
+
+/* Navigation Link Adjustments */
+.nav-links {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  justify-content: center; /* Center links on smaller screens */
+  gap: 10px; /* Add spacing between links */
+}
+
+a {
+  font-size: 1.25rem; /* Adjust size for smaller screens */
+}
+
+.push {
+  margin-left: 10px; /* Reduce margin for smaller screens */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .bigtext {
+    font-size: 2.5rem; /* Scale down title */
+  }
+
+  .smoltext {
+    font-size: 1rem; /* Scale down description text */
+  }
+
+  a {
+    font-size: 1rem; /* Scale down link text */
+  }
+
+  .nav-links {
+    flex-direction: column; /* Stack links vertically */
+    gap: 15px; /* Add spacing between links */
+  }
+}
+
+@media (max-width: 480px) {
+  .bigtext {
+    font-size: 2rem; /* Further scale down title */
+  }
+
+  .smoltext {
+    font-size: 0.875rem; /* Further scale down description text */
+  }
+
+  a {
+    font-size: 0.875rem; /* Further scale down link text */
+  }
+
+  .main {
+    text-align: center; /* Ensure text stays centered */
+    max-width: 100%; /* Use full width for very small screens */
+  }
+
+  .nav-links {
+    gap: 10px; /* Adjust spacing */
+  }
+}
