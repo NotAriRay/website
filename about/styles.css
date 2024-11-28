@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
+/* Root Variables */
 :root {
   --black0: #131314;
   --black1: #1b1b1d;
@@ -29,49 +30,47 @@
   --fg: #c9c7cd;
 }
 
+/* Base Reset */
 body {
   background-color: var(--black0);
   color: var(--fg);
   font-family: "Space Mono", monospace;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
   margin: 0;
+  min-height: 100vh;
+  padding: 20px;
 }
 
+/* Header */
 header {
-  position: absolute;
   width: 100%;
-  top: 20px;
-  padding: 0 60px; /* Add padding for side margins */
+  max-width: 1200px;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  animation: fadeIn 1s ease-in-out;
+  margin-bottom: 30px;
 }
 
 .site-name {
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   color: var(--fg);
-  margin-left: 20px; /* Push to the right */
 }
 
 .navbar {
   display: flex;
   gap: 20px;
-  margin-right: 20px; /* Push to the left */
+  flex-wrap: wrap;
 }
 
 .nav {
   font-size: 1.2rem;
   text-decoration: none;
   color: var(--fg);
-  display: inline-flex;
-  align-items: center;
-  position: relative;
-  padding: 0 5px;
-  transition: transform 0.3s;
+  padding: 5px 10px;
+  transition: transform 0.3s ease;
 }
 
 .nav .arrow,
@@ -98,7 +97,7 @@ header {
 .nav .link-text {
   display: inline-block;
   transition: transform 0.3s;
-  margin-left: -2px; /* Adjust margin to remove space */
+  margin-left: -2px;
 }
 
 .nav:hover .link-text {
@@ -130,30 +129,51 @@ header {
   color: var(--red);
 }
 
+/* Main Section */
 .about-section {
-  max-width: 600px;
-  text-align: left;
-  animation: fadeIn 0.8s ease-in-out forwards;
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  padding: 0 15px;
 }
 
 .section-title {
-  font-size: 3rem;
-  color: var(--fg);
+  font-size: 2.8rem;
+  margin-bottom: 20px;
 }
 
 .description {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
 }
 
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  border: 3px solid var(--fg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.profile-image:hover {
+  transform: scale(1.1) rotate(-3deg);
+}
+
+/* Info Section */
 .info-section {
-  margin-top: 2rem;
+  margin-top: 30px;
+  text-align: left;
 }
 
 .subsection-title {
   font-size: 1.5rem;
-  color: var(--fg);
-  margin-bottom: 0.5rem;
+  margin-bottom: 10px;
 }
 
 .info-section ul {
@@ -163,15 +183,36 @@ header {
 }
 
 .info-section ul li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 10px;
 }
 
 .info-section ul li a {
   color: var(--fg);
   text-decoration: none;
   font-size: 1.1rem;
+  transition: color 0.3s ease;
 }
 
+.info-section ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Language Tags */
+.swift,
+.cpp,
+.py,
+.js,
+.java,
+.cs,
+.c {
+  display: inline-block;
+  margin: 2px;
+  padding: 2px 4px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+/* Fade-In Animation */
 .fade-in {
   opacity: 0;
   animation: fadeIn 1s ease-in-out forwards;
@@ -188,130 +229,95 @@ header {
   }
 }
 
-/* Hover effect for social media links */
-.info-section ul li a {
-  color: var(--fg);
-  text-decoration: none;
-  font-size: 1.1rem;
-  position: relative;
-  transition: color 0.3s ease;
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+  .site-name {
+    font-size: 1.5rem;
+  }
+
+  .navbar {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .nav {
+    font-size: 1.1rem;
+  }
+
+  .section-title {
+    font-size: 2.4rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .profile-image {
+    width: 130px;
+    height: 130px;
+  }
 }
 
-.info-section ul li a::after {
-  content: "↗";
-  position: absolute;
-  right: -15px;
-  transition: transform 0.3s ease, text-decoration 0.3s ease;
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .navbar {
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .about-section {
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .profile-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
 }
 
-.info-section ul li a:hover {
-  text-decoration: underline;
-}
+@media screen and (max-width: 480px) {
+  .site-name {
+    font-size: 1.2rem;
+  }
 
-.info-section ul li a:hover::after {
-  transform: translate(5px, -5px); /* Move arrow diagonally up and right */
-}
+  .navbar {
+    gap: 5px;
+  }
 
-.swift {
-  border: var(--orange) solid 1px;
-  border-radius: 5px;
-  padding-left: 2px;
-  padding-right: 2px;
-  padding-top: 1px;
-  padding-bottom: 1px;
-  background-color: var(--transparent-orange);
-  color: var(--orange);
-}
+  .nav {
+    font-size: 1rem;
+  }
 
-.cpp {
-  border: var(--green) solid 1px;
-  border-radius: 5px;
-  padding-left: 2px;
-  padding-right: 2px;
-  padding-top: 1px;
-  padding-bottom: 1px;
-  background-color: var(--transparent-green);
-  color: var(--green);
-}
+  .profile-image {
+    width: 100px;
+    height: 100px;
+  }
 
-.py {
-  border: var(--cyan) solid 1px;
-  border-radius: 5px;
-  padding-left: 2px;
-  padding-right: 2px;
-  padding-top: 1px;
-  padding-bottom: 1px;
-  background-color: var(--transparent-cyan);
-  color: var(--cyan);
-}
+  .description {
+    font-size: 0.8rem;
+  }
 
-.js {
-  border: var(--yellow) solid 1px;
-  border-radius: 5px;
-  padding-left: 2px;
-  padding-right: 2px;
-  padding-top: 1px;
-  padding-bottom: 1px;
-  background-color: var(--transparent-yellow);
-  color: var(--yellow);
-}
+  .section-title {
+    font-size: 1.8rem;
+  }
 
-.java {
-  border: var(--orange) solid 1px;
-  border-radius: 5px;
-  padding-left: 2px;
-  padding-right: 2px;
-  padding-top: 1px;
-  padding-bottom: 1px;
-  background-color: var(--transparent-orange);
-  color: var(--orange);
-}
-
-.cs {
-  border: var(--purple) solid 1px;
-  border-radius: 5px;
-  padding-left: 2px;
-  padding-right: 2px;
-  padding-top: 1px;
-  padding-bottom: 1px;
-  background-color: var(--transparent-purple);
-  color: var(--purple);
-}
-
-.c {
-  border: var(--blue) solid 1px;
-  border-radius: 5px;
-  padding-left: 2px;
-  padding-right: 2px;
-  padding-top: 1px;
-  padding-bottom: 1px;
-  background-color: var(--transparent-blue);
-  color: var(--blue);
-}
-
-.image-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.profile-image {
-  width: 150px;
-  height: 150px;
-  border-radius: 10px;
-  border: 3px solid var(--fg); /* Adjust border color */
-  transition: transform 0.5s ease-in-out, opacity 1s ease-in-out;
-  opacity: 0; /* Start hidden */
-}
-
-/* Fade-in effect */
-.fade-in .profile-image {
-  opacity: 1;
-  transform: scale(1);
-  transition: transform 0.3s ease-in-out;
-}
-
-.profile-image:hover {
-  transform: scale(1) rotate(-5deg); /* Add zoom and rotate effect on hover */
-  transition: transform 0.3s ease-in-out; /* Make hover effect faster */
+  .info-section ul li a {
+    font-size: 0.9rem;
+  }
 }
