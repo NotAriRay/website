@@ -293,6 +293,7 @@ header {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+  margin-top: 175px;
 }
 
 .profile-image {
@@ -318,7 +319,7 @@ header {
   color: #181a1a;
   width: 150px;
   height: 150px;
-  box-shadow: 0 1px 5px #00000099;
+  box-shadow: 0 2px 7.5px #e9b564;
   border-radius: 10px;
   background-image: url(/images/localthunk.jpg);
   background-size: cover;
@@ -331,7 +332,7 @@ header {
 
 .card:hover {
   transition-duration: 150ms;
-  box-shadow: 0 5px 20px 5px #00000044;
+  box-shadow: 0 5px 20px 5px #e9b564;
 }
 
 .card .glow {
@@ -341,4 +342,5 @@ header {
   left: 0;
   top: 0;
   background-image: radial-gradient(circle at 50% -20%, #ffffff22, #0000000f);
+  border-radius: 9px;
 }
